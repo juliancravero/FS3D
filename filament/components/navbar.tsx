@@ -1,7 +1,8 @@
 "use client"
 import { useRouter } from "next/navigation";
 import { Heart, ShoppingCart, User } from "lucide-react";
-
+import MenuList from "./menu-list";
+import ItemsMenuMobile from "./items-menu-mobile";
 
 const Navbar = () => {
     const router = useRouter()
@@ -11,10 +12,10 @@ const Navbar = () => {
                 <span className='dont-bold'> Solutions</span>
             </h1>
             <div className="items-center justify-between hidden sm:flex">
-                <p>Menu Desktop</p>
+                <MenuList />
             </div>
             <div className="flex sm:hidden">
-                <p>Menu mobile</p>
+                <ItemsMenuMobile />
             </div>
             <div className="flex items-center justify-between gap-2 sm:gap-7">
                 <ShoppingCart strokeWidth="1" 
