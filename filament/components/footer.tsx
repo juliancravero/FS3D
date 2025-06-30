@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Separator } from "./ui/separator";
 
 const dataFootrer = [
   {
@@ -41,6 +42,12 @@ const Footer = () => {
                 ))}
             </ul>
         </div>
+        <Separator className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"/>
+        <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
+            &copy; 2025
+            <Link href="#">Filament Solutions</Link>
+            Todos los derechos reservados.
+        </span>
       </div>
     </footer>
   );
