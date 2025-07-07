@@ -32,7 +32,7 @@ const FeaturedProducts = () => {
                             return (
                                 <CarouselItem key={id} className="md:basis-1/2 lg:basis-1/3 group">
                                     <div className="p-1">
-                                        <Card className="py-4 border border-gray-200 shadow-none">
+                                        <Card className="py-4 border border-gray-600 shadow-none bg-shite/5 backdrop-blur-md ">
                                             <CardContent className="relative flex items-center justify-center px-6 py-2">
                                                 <img
                                                     src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${images.data[0].attributes.url}`}

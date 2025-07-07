@@ -118,5 +118,12 @@
   }
   body {
     @apply bg-background text-foreground;
+    background-image: url('/fondo.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
   }
+  .dark body {
+  background-image: url('/fondoDark.png');
+}
 }

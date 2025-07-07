@@ -4,8 +4,6 @@ const FiltersControlCategory = () => {
             <p>Filters origin</p>
 
         </div>
-
-
     )
 }
 

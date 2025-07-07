@@ -9,8 +9,8 @@ const Navbar = () => {
     const router = useRouter()
     return (
         <div className='flex items-center justify-between p-4 nx-auto cursor-pointer sm:max-w-4xl md:max-w-6xl'>
-            <h1 className='text-3xl' onClick={() => router.push("/")}>Filament
-                <span className='dont-bold'> Solutions</span>
+            <h1 className='text-3xl' onClick={() => router.push("/")}> Fila
+                <span className='font-bold'>so</span>
             </h1>
             <div className="items-center justify-between hidden sm:flex">
                 <MenuList />
