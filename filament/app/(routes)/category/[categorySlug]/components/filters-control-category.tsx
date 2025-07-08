@@ -1,7 +1,9 @@
+import FilterOrigin from "./filter-origin";
+
 const FiltersControlCategory = () => {
     return (
         <div className="sm:w-[350px] sm:mt-5">
-            <p>Filters origin</p>
+            <FilterOrigin />
 
         </div>
     )
