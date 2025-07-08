@@ -52,8 +52,7 @@
       "type": "enumeration",
       "enum": [
         "kg 1",
-        "g 500",
-        "g 900"
+        "kg 10"
       ]
     }
   }

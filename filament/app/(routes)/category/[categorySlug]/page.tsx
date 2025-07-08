@@ -8,12 +8,22 @@ import FiltersControlCategory from "./components/filters-control-category";
 import SkeletonSchema from "@/components/skeletonSchema";
 import ProductCard from "./components/product-card";
 import { ProductType } from "@/types/product";
+import { useState } from "react";
 
 export default function Page() {
     const params = useParams()
     const {categorySlug} = params
     const {result, loading}: ResponseType = useGetCategoryProducts(categorySlug as string)
     const router = useRouter()
+    const [filterOrigin, setFilterOrigin] = useState('')
+
+    const filteredProducts = result !== null &&!loading && (
+        filterOrigin == ''
+        ? result
+        : result.filter((product: ProductType) =>
+        product.attributes.origin === filterOrigin )
+    )
+    console.log()
 
     return (
         <div className="max-w-6xl py-4 mx-auto sm:py-16 sm:px-24">
@@ -24,16 +34,20 @@ export default function Page() {
             <Separator />
 
             <div className="sm:flex sm:justify-between">
-                <FiltersControlCategory />
+                <FiltersControlCategory setFilterOrigin={setFilterOrigin} />
                 <div className="grid gap-5 mt-8 sm:grid-cols-2 md:grid-cols-3 md:gap-10">
                     {loading && (
                         <SkeletonSchema grid={3} />
                     )}
-                    {result !== null && !loading && (
-                        result.map((product: ProductType) => (
+                    {filteredProducts !== null && !loading && (
+                        filteredProducts.map((product: ProductType) => (
                             <ProductCard key={product.id} product={product} />    
                         ))
                     )}
+                    {filteredProducts !== null && !loading && filteredProducts.length === 0 &&(
+                        <p>No hay filamentos con este filtro.</p>
+                    )}
+
                 </div>
 
             </div>
