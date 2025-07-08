@@ -5,6 +5,9 @@ import { Separator } from "@/components/ui/separator";
 import { ResponseType } from "@/types/response";
 import { useParams, useRouter } from "next/navigation";
 import FiltersControlCategory from "./components/filters-control-category";
+import SkeletonSchema from "@/components/skeletonSchema";
+import ProductCard from "./components/product-card";
+import { ProductType } from "@/types/product";
 
 export default function Page() {
     const params = useParams()
@@ -22,6 +25,17 @@ export default function Page() {
 
             <div className="sm:flex sm:justify-between">
                 <FiltersControlCategory />
+                <div className="grid gap-5 mt-8 sm:grid-cols-2 md:grid-cols-3 md:gap-10">
+                    {loading && (
+                        <SkeletonSchema grid={3} />
+                    )}
+                    {result !== null && !loading && (
+                        result.map((product: ProductType) => (
+                            <ProductCard key={product.id} product={product} />    
+                        ))
+                    )}
+                </div>
+
             </div>
         </div>
             
