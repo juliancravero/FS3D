@@ -12,7 +12,7 @@ const Navbar = () => {
             <h1 className='text-3xl' onClick={() => router.push("/")}> Fila
                 <span className='font-bold'>son</span>
             </h1>
-            <div className="items-center justify-between hidden sm:flex">
+            <div className="z-50 items-center justify-between hidden sm:flex">
                 <MenuList />
             </div>
             <div className="flex sm:hidden">
