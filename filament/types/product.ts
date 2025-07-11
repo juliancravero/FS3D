@@ -6,7 +6,6 @@ export type ProductType = {
         slug: string;
         active: boolean;
         isFeatured: boolean;
-        taste: string;
         origin: string;
         price: number;
         images: {

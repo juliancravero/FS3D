@@ -27,7 +27,7 @@ export default function Page() {
                     <CarouselProduct images={result[0].attributes.images} />
                 </div>
                 <div className="sm:px-12">
-                    <InfoProduct />
+                    <InfoProduct product={result[0]}/>
                 </div>
             </div>
         </div>
