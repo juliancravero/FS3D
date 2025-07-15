@@ -11,7 +11,7 @@ export type InfoProductProps = {
 const InfoProduct = ( props: InfoProductProps ) => {
     const {product} = props
     return (
-        <div>
+        <div className="px-6">
             <div className="justify-between mb-3 sm:flex">
                 <h1 className="text-2xl">{product.attributes.productName}</h1>
                 <div className="flex items-center justify-between gap-3">
@@ -25,11 +25,12 @@ const InfoProduct = ( props: InfoProductProps ) => {
             <Separator className="my-4" />
             <p className="my-4 text-2xl">{formatPrice(product.attributes.price)}</p>
             <div className="flex items-center gap-5">
-                <Button className="w-full" onClick={() => console.log("Comprar")}>Comprar</Button>
-                <Heart width={30} strokeWidth={1} className="transition duration-300 cursor-pointer hover:fill-black"
-                onClick={() => console.log("Agregar a me gusta")} />
+                <Button className="flex-grow-0 px-6 py-2" onClick={() => console.log("Comprar")}>Comprar</Button>
+                
+                <Heart width={30} strokeWidth={1} className="transition duration-300 cursor-pointer hover:fill-primary"
+                    onClick={() => console.log("Agregar a me gusta")} />
             </div>
-        </div>
+        </div> 
     )
 }
 
