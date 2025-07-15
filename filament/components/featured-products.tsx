@@ -10,12 +10,13 @@ import { Expand, ShoppingCart } from "lucide-react";
 import { Icon } from "@radix-ui/react-select";
 import { useRouter } from "next/navigation";
 import IconButton from "./icon-button";
+import { useCart } from "@/hooks/use-cart";
 
 
 const FeaturedProducts = () => {
     const {loading, result}: ResponseType = useGetFeaturedProducts()
     const router = useRouter()
-    console.log(result);
+    const {addItem} = useCart()
 
     return (
         <div className="max-w-6xl py-4 mx-auto sm:py-16 sm:px-24">
@@ -45,7 +46,7 @@ const FeaturedProducts = () => {
                                                         className="text-gray-600"
                                                         />
                                                         <IconButton
-                                                        onClick={() => console.log("Add to cart")}
+                                                        onClick={() => addItem(product)}
                                                         icon={<ShoppingCart size={20} />}
                                                         className="text-gray-600"
                                                         />
