@@ -10,10 +10,10 @@ export default function Page() {
     const prices = items.map((product => product.attributes.price))
     const totalPrice = prices.reduce((total, price) => total + price, 0)
     return (
-        <div className="max-w-6xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
+        <div className="max-w-6xl px-4 py-16 mx-auto sm:px-6 lg:px-8 p-6 rounded-lg bg-white/30 dark:bg-white/10 backdrop-blur-md shadow-xl transition duration-200">
             <h1 className="mb-5 text-3xl font-bold">Carrito:</h1>
             <div className="grid sm:grid-cols-2 sm:gap-5">
-                <div>
+                <div className="p-6 rounded-lg bg-white/30 dark:bg-white/10 backdrop-blur-md shadow-xl transition duration-200">
                     {items.length == 0 && (
                         <p>No hay productos en el carrito</p>
                     )}

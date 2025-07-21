@@ -25,8 +25,8 @@ export const dataCaroselTop = [
   },   
   {
     id: 4,
-    title: "Ofertas especiales",
-    description: "No te pierdas nuestras ofertas especiales de la semana",
+    title: "6 cuotas sin interes en toda la web!!!!",
+    description: "COMPRA AHORA",
     link: "#:"
   }
 ]
@@ -45,12 +45,12 @@ const CarouselTextBanner = () => {
         >
             <CarouselContent>
                 {dataCaroselTop.map(({ id, title, description, link }) => (
-                    <CarouselItem key={id} onClick={() => router.push(link)} className="cursor-pointer">
+                    <CarouselItem key={id} onClick={() => router.push(link)} className="cursor-pointer h-15 flex items-center justify-center">
                         <div>
                             <Card className="shadow-none border-none bg-transparent">
-                                <CardContent className="flex flex-col justify-center p-2 items-center text-center">
-                                    <p className="sm:text-lg text-wrap dark:text-secondary">{title}</p>
-                                    <p className="text-xs sm:text-sm text-wrap dark:text-secondary">{description}</p>
+                                <CardContent className="flex flex-col justify-center items-center text-center p-0 py-1 h-full gap-y-1">
+                                    <p className="text-sm sm:text-base dark:text-secondary leading-tight m-0">{title}</p>
+                                    <p className="text-xs sm:text-sm dark:text-secondary leading-tight m-0">{description}</p>
                                 </CardContent>
                             </Card>
                         </div>
