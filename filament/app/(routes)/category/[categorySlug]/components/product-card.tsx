@@ -16,7 +16,7 @@ const ProductCard = (props: ProductCardProps) => {
     
     return (
         <Link href={`/product/${product.attributes.slug}`}
-        className="bg-white/10 dark:bg-gray-900/30 border border-gray-600 dark:border-gray-400 backdrop-blur-md rounded-lg transition-all duration-200 hover:bg-white/20 dark:hover:bg-gray-800 hover:shadow-lg">
+        className="py-1 border border-gray-600 shadow-none bg-white/5 backdrop-blur-md rounded-md ">
             <div className="absolute flex items-center justify-between gap-3 px-2 z-[1] top-4">
                 <p className="px-2 py-1 text-xs text-white bg-black rounded-full dark:bg-white dark:text-black w-fit">{product.attributes.productName}</p> 
                 <p className="px-2 py-1 text-xs text-white bg-primary rounded-full dark:bg-primary dark:text-black w-fit">{product.attributes.origin}</p>
