@@ -30,7 +30,7 @@ const Footer = () => {
         <div className="sm:flex sm:items-center sm:justify-between">
             <p>
                 Fila
-                <span className="font-bold">
+                <span className="font-bold text-primary">
                     son
                 </span>
             </p>
