@@ -4,6 +4,7 @@ import { ProductType } from "@/types/product"
 import { X } from "lucide-react"
 import { useRouter } from "next/navigation"
 import { cn } from "@/lib/utils"
+import ProductOrigin from "@/components/shared/product-origin"
 
 
 interface CartItemProps {
@@ -26,11 +27,7 @@ const CartItem = (props: CartItemProps) => {
                 <div>
                     <h2 className="text-lg font-bold">{product.attributes.productName}</h2>
                     <p className="font-bold">{formatPrice(product.attributes.price)}</p>
-                    <div className="flex items-center justify-between gap-3">
-                        <p className="px-2 py-1 text-white bg-black rounded-full dark:bg-white dark:text-black w-fit">
-                            {product.attributes.origin}
-                        </p>
-                    </div>
+                    <ProductOrigin origin={product.attributes.origin} />
                     </div>
                     <div>
                         <button className={cn("rounded-full flex items-center justify-center bg-white dark:bg-black border shadow-md p-1 hover:scale-110 transition")}>

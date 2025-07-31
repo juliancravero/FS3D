@@ -1,3 +1,4 @@
+import ProductOrigin from "@/components/shared/product-origin";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/hooks/use-cart";
 import { useLovedProducts } from "@/hooks/use-loved-products";
@@ -16,6 +17,10 @@ const LovedItemProduct = (props: LovedItemProductProps) => {
     const router = useRouter()
     const {removeLovedItem} = useLovedProducts()
     const { addItem } = useCart()
+    const addToCheckOut = () => {
+        addItem(product)
+        removeLovedItem(product.id)
+    }
 
     return (
         <li className="flex py-6 border-b">
@@ -27,10 +32,8 @@ const LovedItemProduct = (props: LovedItemProductProps) => {
                 <div>
                     <h2 className="text-lg font-bold">{product.attributes.productName}</h2>
                     <p className="font-bold">{formatPrice(product.attributes.price)}</p>
-                    <div className="flex items-center justify-between gap-3">
-                        <p className="px-2 py-1 text-xs text-white bg-black rounded-full dark:bg-white dark:text-black w-fit">{product.attributes.origin}</p>
-                    </div>
-                    <Button className="mt-5 rounded-full">Añadir al carrito</Button>
+                    <ProductOrigin origin={product.attributes.origin}/>
+                    <Button className="mt-5 rounded-full" onClick={addToCheckOut}>Añadir al carrito</Button>
                 </div>
                 <div>
                     <button className={cn("rounded-full flex items-center justify-center bg-white dark:bg-black border shadow-md p-1 hover:scale-110 transition")}>
